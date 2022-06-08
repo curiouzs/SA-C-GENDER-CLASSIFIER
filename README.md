@@ -15,21 +15,31 @@ Program to implement Gender Classification
 Developed by   : Lokesh Krishnaa M
 RegisterNumber :  212220230030
 """
-
-#import libraries
-
 from deepface import DeepFace
 import cv2
 import matplotlib.pyplot as plt
-
-#read the image
-img=cv2.imread('GowriM.jpeg')
+#1st image
+img=cv2.imread('tata.jpg')
 plt.imshow(img[:,:,::-1])
 plt.show()
 
-#To identify the gender
 result=DeepFace.analyze(img,actions=['gender'])
-result2=DeepFace.analyze(img,actions=['emotion'])
+print("Gender : ",result['gender'])
+
+#2nd image
+img1=cv2.imread('bobby.jpg')
+plt.imshow(img1[:,:,::-1])
+plt.show()
+
+result=DeepFace.analyze(img1,actions=['gender'])
+print("Gender : ",result['gender'])
+
+#3rd image
+img2=cv2.imread('modi.jpg')
+plt.imshow(img2[:,:,::-1])
+plt.show()
+
+result=DeepFace.analyze(img2,actions=['gender'])
 print("Gender : ",result['gender'])
 
 ```
